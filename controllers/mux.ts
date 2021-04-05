@@ -71,7 +71,7 @@ const submitRemoteUpload = async (ctx:Context) => {
 
 const muxWebhookHandler = async (ctx:Context) => {
   const body = ctx.request.body;
-  const sig = ctx.request.headers['mux-signature'];
+  const sig = ctx.request.headers['mux-signature'] as string;
 
   const config = await getConfig('general');
 
